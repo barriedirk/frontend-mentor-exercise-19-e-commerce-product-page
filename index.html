@@ -1,44 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
+    <meta name="author" content="Barrie Freyre" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <meta name="linkedin" content="https://www.linkedin.com/in/barriefreyre/" />
+    <meta name="github" content="https://github.com/barriedirk" />
+    <meta
+      name="frontendmentor"
+      content="https://www.frontendmentor.io/profile/barriedirk"
+    />
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+    <link rel="me" href="https://www.linkedin.com/in/barriefreyre/" />
+    <link rel="me" href="https://github.com/barriedirk" />
+    <link rel="me" href="https://www.frontendmentor.io/profile/barriedirk" />
 
-  Sneaker Company
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Barrie Freyre",
+        "url": "",
+        "sameAs": [
+          "https://www.linkedin.com/in/barriefreyre/",
+          "https://github.com/barriedirk",
+          "https://www.frontendmentor.io/profile/barriedirk"
+        ]
+      }
+    </script>
 
-  Fall Limited Edition Sneakers
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./main.css" />
 
-  $125.00
-  50%
-  $250.00
+    <script type="module" src="./main.js"></script>
 
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 1rem;
+        text-align: center;
+      }
+      .attribution a {
+        color: var(--clr-grey-300);
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="header">
+      <nav class="header__nav">
+        <input type="checkbox" id="menu-toogle" class="header__menu-toogle" />
+
+        <label
+          class="header__nav-icon pointer"
+          for="menu-toogle"
+          aria-label="Open toggle menu"
+        >
+          <img
+            class="header__nav-icon--image"
+            src="./images/icon-menu.svg"
+            alt="Icon Menu Navigation"
+          />
+        </label>
+
+        <div class="header__overlay"></div>
+        <div class="header__menu-wrapper">
+          <label
+            class="header__nav-icon pointer"
+            for="menu-toogle"
+            aria-label="Close toggle menu"
+          >
+            <img
+              class="header__nav-icon--image-close-menu"
+              src="./images/icon-close.svg"
+              alt="Icon Menu Navigation"
+            />
+          </label>
+
+          <ul class="header__menu">
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Collections</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Men</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Women</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">About</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#" class="header__menu-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <a href="./index.html" class="header__logo">
+        <img
+          class="header__logo--image"
+          src="./images/logo.svg"
+          alt="Logo of Sneakers "
+        />
+      </a>
+
+      <button
+        class="cart-button"
+        type="button"
+        aria-label="Shopping cart"
+        aria-haspopup="dialog"
+        aria-controls="cart-dialog"
+      >
+        <img
+          src="./images/icon-cart.svg"
+          class="cart-button__image"
+          alt="Cart Icon"
+        />
+        <span class="cart-button__badge" aria-live="polite"> 3</span>
+      </button>
+
+      <button type="button" class="avatar-button" aria-label="User menu">
+        <img src="./images/image-avatar.png" class="avatar-button__image" />
+      </button>
+
+      <div
+        id="cart-dialog"
+        class="cart-dialog"
+        role="dialog"
+        aria-hidden="true"
+      ></div>
+    </header>
+    <main id="main-content" class="main" aria-labelledby="">
+      <section class="card">
+        <h2 id="">Sneaker Company</h2>
+
+        <p>Fall Limited Edition Sneakers</p>
+
+        <p>
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+
+        <div>
+          <p>
+            <span>$125.00</span>
+            <span>50%</span>
+            <span>$250.00</span>
+          </p>
+        </div>
+
+        <div>
+          <span>0</span>
+          <button type="button">Add to cart</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.linkedin.com/in/barriefreyre/" target="_blank"
+        >Barrie Freyre</a
+      >
+    </footer>
+  </body>
 </html>
