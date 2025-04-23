@@ -66,53 +66,36 @@
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="header">
-      <nav class="header__nav">
-        <input type="checkbox" id="menu-toogle" class="header__menu-toogle" />
-
-        <label
-          class="header__nav-icon pointer"
-          for="menu-toogle"
+      <nav class="header__nav" aria-labelledby="primary-nav">
+        <button
+          id="header__nav-show-menu"
+          class="header__nav-show-menu"
+          aria-expanded="false"
+          aria-controls="header__menu-options"
           aria-label="Open toggle menu"
         >
-          <img
-            class="header__nav-icon--image"
-            src="./images/icon-menu.svg"
-            alt="Icon Menu Navigation"
-          />
-        </label>
+          <span class="sr-only">Menu</span>
+        </button>
 
         <div class="header__overlay"></div>
-        <div class="header__menu-wrapper">
-          <label
-            class="header__nav-icon pointer"
-            for="menu-toogle"
-            aria-label="Close toggle menu"
-          >
-            <img
-              class="header__nav-icon--image-close-menu"
-              src="./images/icon-close.svg"
-              alt="Icon Menu Navigation"
-            />
-          </label>
 
-          <ul class="header__menu">
-            <li class="header__menu-item">
-              <a href="#" class="header__menu-link">Collections</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="#" class="header__menu-link">Men</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="#" class="header__menu-link">Women</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="#" class="header__menu-link">About</a>
-            </li>
-            <li class="header__menu-item">
-              <a href="#" class="header__menu-link">Contact</a>
-            </li>
-          </ul>
-        </div>
+        <ul class="header__menu" id="header__menu-options">
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">Collections</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">Men</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">Women</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">About</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">Contact</a>
+          </li>
+        </ul>
       </nav>
 
       <a href="./index.html" class="header__logo">
@@ -178,7 +161,9 @@
 
     <footer class="attribution">
       Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+      <a
+        href="https://www.frontendmentor.io/profile/barriedirk/solutions"
+        target="_blank"
         >Frontend Mentor</a
       >. Coded by
       <a href="https://www.linkedin.com/in/barriefreyre/" target="_blank"
