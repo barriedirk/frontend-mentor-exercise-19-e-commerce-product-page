@@ -132,29 +132,178 @@
         aria-hidden="true"
       ></div>
     </header>
+
     <main id="main-content" class="main" aria-labelledby="">
-      <section class="card">
-        <h2 id="">Sneaker Company</h2>
+      <section class="product">
+        <div
+          class="product__gallery"
+          role="region"
+          aria-label="Product image gallery"
+        >
+          <div class="product__gallery-main">
+            <img
+              id="product__main-image"
+              class="product__gallery-image"
+              src="image1.jpg"
+              alt="Product view 1"
+              aria-live="polite"
+            />
 
-        <p>Fall Limited Edition Sneakers</p>
+            <button
+              type="button"
+              class="product__gallery-btn product__gallery-btn--prev"
+              aria-label="Previous image"
+              onclick="showPrevSlide()"
+            >
+              <img
+                src="./images/icon-previous.svg"
+                alt="Previous Slide Icon"
+                width="6"
+                height="11"
+              />
+            </button>
 
-        <p>
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they’ll withstand everything
-          the weather can offer.
-        </p>
+            <button
+              type="button"
+              class="product__gallery-btn product__gallery-btn--next"
+              aria-label="Next image"
+              onclick="showNextSlide()"
+            >
+              <img
+                src="./images/icon-next.svg"
+                alt="Next Slide Icon"
+                width="6"
+                height="11"
+              />
+            </button>
+          </div>
 
-        <div>
-          <p>
-            <span>$125.00</span>
-            <span>50%</span>
-            <span>$250.00</span>
+          <div
+            class="product__gallery-thumbnails"
+            aria-label="Thumbnail selector"
+          >
+            <button class="product__thumbnail" onclick="setImage(0)">
+              <img
+                src="./images/image-product-1-thumbnail.jpg"
+                alt="Thumbnail 1"
+              />
+            </button>
+            <button class="product__thumbnail" onclick="setImage(1)">
+              <img
+                src="./images/image-product-2-thumbnail.jpg"
+                alt="Thumbnail 2"
+              />
+            </button>
+            <button class="product__thumbnail" onclick="setImage(2)">
+              <img
+                src="./images/image-product-3-thumbnail.jpg"
+                alt="Thumbnail 3"
+              />
+            </button>
+            <button class="product__thumbnail" onclick="setImage(3)">
+              <img
+                src="./images/image-product-4-thumbnail.jpg"
+                alt="Thumbnail 4"
+              />
+            </button>
+          </div>
+        </div>
+
+        <div class="product__content">
+          <h2 id="product__company" class="product__company">
+            Sneaker Company
+          </h2>
+          <h1 id="product__title" class="product__title">
+            Fall Limited Edition Sneakers
+          </h1>
+          <p id="product__description" class="product__description">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
           </p>
         </div>
 
-        <div>
-          <span>0</span>
-          <button type="button">Add to cart</button>
+        <div class="product__checkout-wrapper">
+          <div id="product__price" class="product__price">
+            <div
+              class="product__price--actual"
+              role="group"
+              aria-label="Product price"
+            >
+              <span
+                id="product__price-sale"
+                class="product__price-sale"
+                aria-label="Sale price"
+                aria-describedby="product__price-discount"
+              >
+                $125.00
+              </span>
+              <span
+                id="product__price-discount"
+                class="product__price-discount"
+                aria-label="Discount"
+              >
+                50%
+              </span>
+            </div>
+            <span
+              id="product__price-original"
+              class="product__price-original"
+              aria-label="Original Price"
+            >
+              $250.00
+            </span>
+          </div>
+
+          <div
+            class="product__quantity-selector"
+            role="group"
+            aria-label="Product quantity selector"
+          >
+            <button
+              type="button"
+              class="product__quantity-btn product__quantity-btn--decrease"
+              aria-label="Decrease quantity"
+              onclick="decreaseQuantity()"
+            >
+              <img src="./images/icon-minus.svg" alt="Icon minus" />
+            </button>
+
+            <span
+              id="product__quantity-value"
+              class="product__quantity-value"
+              role="status"
+              aria-live="polite"
+              aria-label="Selected quantity"
+            >
+              1
+            </span>
+
+            <button
+              type="button"
+              class="product__quantity-btn product__quantity-btn--increase"
+              aria-label="Increase quantity"
+              onclick="increaseQuantity()"
+            >
+              <img src="./images/icon-plus.svg" alt="Icon plus" />
+            </button>
+          </div>
+
+          <button
+            type="button"
+            id="product__checkout-btn"
+            class="product__checkout-btn"
+            aria-label="Add product to cart"
+          >
+            <img
+              class="product__btn-icon"
+              src="./images/icon-cart.svg"
+              width="17"
+              height="16"
+              aria-hidden="true"
+            />
+            <span class="product__btn-text">Add to cart</span>
+          </button>
         </div>
       </section>
     </main>
