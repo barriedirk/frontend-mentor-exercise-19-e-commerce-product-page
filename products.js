@@ -1,4 +1,4 @@
-import { $ } from "./utils.js";
+import { $, getCartQuantity } from "./utils.js";
 import { addCartAction, removeCartAction } from "./reduxCart.js";
 
 export const initializeProductDetail = ({
@@ -43,6 +43,7 @@ export const initializeAddToCart = ({ stock, product, store }) => {
 
   $btnDecrease.addEventListener("click", (evt) => {
     evt.preventDefault();
+    evt.stopPropagation();
 
     if (quantity === 1) {
       $btnDecrease.disabled = true;
@@ -55,6 +56,7 @@ export const initializeAddToCart = ({ stock, product, store }) => {
 
   $btnIncrease.addEventListener("click", (evt) => {
     evt.preventDefault();
+    evt.stopPropagation();
 
     if (quantity === stock - 1) {
       $btnIncrease.disabled = true;
@@ -67,6 +69,7 @@ export const initializeAddToCart = ({ stock, product, store }) => {
 
   $btnCheckout.addEventListener("click", (evt) => {
     evt.preventDefault();
+    evt.stopPropagation();
 
     if (quantity > 0) {
       addCartAction(store, {
@@ -82,12 +85,7 @@ export const initializeAddToCart = ({ stock, product, store }) => {
 };
 
 export const updateNumberCartItems = ({ store, $badge }) => {
-  const nItems =
-    store.getState().cart.reduce((acc, curr) => {
-      acc += curr.quantity;
-
-      return acc;
-    }, 0) ?? 0;
+  const nItems = getCartQuantity(store);
 
   $badge.innerHTML = nItems > 0 ? nItems : "";
 };

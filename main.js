@@ -8,6 +8,7 @@ import {
   initializeAddToCart,
   updateNumberCartItems,
 } from "./products.js";
+import { initializeCartCheckoutDialog } from "./cart-panel.js";
 
 import { createStore, cartReducer } from "./reduxCart.js";
 
@@ -43,18 +44,9 @@ import { createStore, cartReducer } from "./reduxCart.js";
     alert("show lightbox");
   });
 
-  $("#cart-button--toggle").addEventListener("click", function (evt) {
-    evt.preventDefault();
-
-    const isExpanded = this.getAttribute("aria-expanded") === "true";
-    const expandedValue = isExpanded ? "false" : "true";
-    const labelValue = isExpanded ? "Close cart panel" : "Open cart panel";
-
-    this.setAttribute("aria-expanded", expandedValue);
-    this.setAttribute("aria-label", labelValue);
-
-    $("#cart-panel").style.display = isExpanded ? "none" : "flex";
+  initializeCartCheckoutDialog({
+    store,
+    $cartButton: $("#cart-button--toggle"),
+    $cartPanel: $("#cart-panel"),
   });
-
-  // cart
 })();

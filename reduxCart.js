@@ -7,9 +7,6 @@ export const createStore = (reducer) => {
   const dispatch = (action) => {
     state = reducer(state, action);
     listeners.forEach((listener) => listener());
-
-    // @todo, remove
-    console.log(state);
   };
 
   const subscribe = (listener) => {
@@ -29,12 +26,16 @@ const initialState = {
 };
 
 export const CartActionType = Object.freeze({
+  CLEAR_CART: "CLEAR_CART",
   ADD_TO_CART: "ADD_TO_CART",
   REMOVE_FROM_CART: "REMOVE_FROM_CART",
 });
 
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
+    case CartActionType.CLEAR_CART: {
+      return structuredClone(initialState);
+    }
     case CartActionType.ADD_TO_CART: {
       const {
         quantity,
@@ -85,5 +86,11 @@ export const removeCartAction = (store, productId) => {
   store.dispatch({
     type: CartActionType.REMOVE_FROM_CART,
     payload: { id: productId },
+  });
+};
+
+export const clearCartAction = (store) => {
+  store.dispatch({
+    type: CartActionType.CLEAR_CART,
   });
 };

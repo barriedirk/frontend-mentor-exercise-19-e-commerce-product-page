@@ -148,6 +148,12 @@ body {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  border: 1px solid transparent;
+}
+
+.avatar-button__image:is(:hover, :focus) {
+  border-radius: 50%;
+  border: 1px solid var(--clr-orange-500);
 }
 
 .avatar-button {
@@ -607,6 +613,10 @@ body {
 @media screen and (min-width: 608px) {
   .cart-panel {
     top: 90px;
+  }
+
+  .avatar-button {
+    width: 50px;
   }
 
   body,
