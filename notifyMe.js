@@ -1,3 +1,5 @@
+// NOTE: No used in this project
+
 export class Subject {
   observers = [];
 
