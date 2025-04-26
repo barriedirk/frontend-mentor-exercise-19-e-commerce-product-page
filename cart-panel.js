@@ -31,7 +31,7 @@ const createCheckoutButton = ({ store, abortListener }) => {
     (evt) => {
       evt.stopPropagation();
 
-      alert("You click checkout button");
+      alert("You clicked checkout button");
 
       clearCartAction(store);
     },

@@ -4,8 +4,8 @@ const MAX_THUMBNAILS = 4;
 
 export const initializeGallery = ({
   slides,
-  mainImageId,
-  galleryThumbnailsId,
+  $mainImage,
+  $galleryThumbnails,
   galleryId,
 }) => {
   const abortListener = new AbortController();
@@ -15,9 +15,6 @@ export const initializeGallery = ({
   const defaultIndex = images.findIndex((image) => image.default);
 
   let currentIndex = defaultIndex === 1 ? 0 : defaultIndex;
-
-  const $mainImage = $(mainImageId);
-  const $galleryThumbnails = $(galleryThumbnailsId);
 
   const removeClassActive = () => {
     const buttonList = $galleryThumbnails.querySelectorAll(
@@ -102,7 +99,7 @@ export const initializeGallery = ({
     $galleryThumbnails.appendChild(button);
   });
 
-  updateImage();
+  setImage(currentIndex);
 
   return abortListener;
 };

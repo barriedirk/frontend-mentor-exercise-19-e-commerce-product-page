@@ -31,6 +31,13 @@
       }
     </script>
 
+    <!-- dialog-polyfill from Google. To mimics native -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/dialog-polyfill@0.5.6/dist/dialog-polyfill.css"
+    />
+    <script src="https://unpkg.com/dialog-polyfill@0.5.6/dist/dialog-polyfill.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -347,5 +354,26 @@
         >Barrie Freyre</a
       >
     </footer>
+
+    <dialog id="lightbox" class="lightbox">
+      <header class="lightbox__header">
+        <button class="lightbox__close" aria-label="Close lightbox">
+          <img
+            class="lightbox__close--icon icon-close"
+            src="./images/icon-close.svg"
+            width="20"
+            height="20"
+            alt="Close lightbox icon"
+          />
+        </button>
+      </header>
+
+      <div
+        class="lightbox__content product__gallery"
+        id="lightbox__gallery-main"
+        role="region"
+        aria-label="Product image gallery"
+      ></div>
+    </dialog>
   </body>
 </html>

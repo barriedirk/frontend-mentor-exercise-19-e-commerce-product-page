@@ -23,9 +23,14 @@ picture,
 img,
 svg,
 canvas,
-video {
+video,
+object {
   display: block;
   max-width: 100%;
+}
+
+svg {
+  fill: currentColor;
 }
 
 button {

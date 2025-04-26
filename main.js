@@ -9,17 +9,24 @@ import {
   updateNumberCartItems,
 } from "./products.js";
 import { initializeCartCheckoutDialog } from "./cart-panel.js";
+import { initializeLightBox } from "./lightbox.js";
 
 import { createStore, cartReducer } from "./reduxCart.js";
 
 (async () => {
   const store = createStore(cartReducer);
+  const mediaQuery = window.matchMedia("(min-width: 700px)");
 
   initializeMenu();
 
   const product = await fetchData();
 
   const { company, title, description, price, images, stock } = product;
+
+  const showLightBox = initializeLightBox({
+    $dialog: $("#lightbox"),
+    $content: $("#lightbox__gallery-main"),
+  });
 
   initializeProductDetail({ company, title, description, price });
 
@@ -31,17 +38,17 @@ import { createStore, cartReducer } from "./reduxCart.js";
 
   initializeGallery({
     slides: images,
-    mainImageId: "#product__main-image",
-    galleryThumbnailsId: "#product__gallery-thumbnails",
+    $mainImage: $("#product__main-image"),
+    $galleryThumbnails: $("#product__gallery-thumbnails"),
     galleryId: "#product__gallery-main",
   });
 
-  // lightbox
-  // @todo missing lightbox
   $("#product__main-image").addEventListener("dblclick", (event) => {
     event.preventDefault();
 
-    alert("show lightbox");
+    if (mediaQuery.matches) {
+      showLightBox({ images });
+    }
   });
 
   initializeCartCheckoutDialog({
