@@ -65,6 +65,11 @@ const showGallery = ({ images, $content }) => {
 export const initializeLightBox = ({ $dialog, $content }) => {
   let controllerAbort;
 
+  // Register polyfill if needed
+  if (!$dialog.showModal) {
+    $dialogPolyfill.registerDialog(dialog);
+  }
+
   $content.innerHTML = "";
 
   $dialog.querySelector(".lightbox__close").addEventListener("click", (evt) => {

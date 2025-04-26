@@ -493,6 +493,7 @@ dialog.lightbox {
   max-width: 620px;
   height: 100%;
   max-height: 750px;
+  margin: auto;
 }
 
 .lightbox__header {

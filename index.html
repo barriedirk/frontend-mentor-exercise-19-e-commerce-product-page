@@ -10,8 +10,7 @@
     <meta name="github" content="https://github.com/barriedirk" />
     <meta
       name="frontendmentor"
-      content="https://www.frontendmentor.io/profile/barriedirk"
-    />
+      content="https://www.frontendmentor.io/profile/barriedirk" />
 
     <link rel="me" href="https://www.linkedin.com/in/barriefreyre/" />
     <link rel="me" href="https://github.com/barriedirk" />
@@ -31,31 +30,31 @@
       }
     </script>
 
-    <!-- dialog-polyfill from Google. To mimics native -->
+    <!-- 
+    dialog-polyfill from Google. To mimics native -->
     <link
       rel="stylesheet"
-      href="https://unpkg.com/dialog-polyfill@0.5.6/dist/dialog-polyfill.css"
-    />
+      href="https://unpkg.com/dialog-polyfill@0.5.6/dist/dialog-polyfill.css" />
     <script src="https://unpkg.com/dialog-polyfill@0.5.6/dist/dialog-polyfill.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
 
-    <link rel="stylesheet" href="./reset.css" />
-    <link rel="stylesheet" href="./main.css" />
+    <!-- <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./main.css" /> -->
+    <link rel="stylesheet" href="./bundle.css" />
 
-    <script type="module" src="./main.js"></script>
+    <!-- <script type="module" src="./main.js"></script> -->
+    <script type="module" src="./bundle.js"></script>
 
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+      href="./images/favicon-32x32.png" />
 
     <title>Frontend Mentor | E-commerce product page</title>
 
@@ -64,23 +63,23 @@
       .attribution {
         font-size: 1rem;
         text-align: center;
+        margin-top: 20px;
       }
       .attribution a {
-        color: var(--clr-orange-500);
+        color: var(--clr-black);
       }
     </style>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="header">
-      <nav class="header__nav" aria-labelledby="primary-nav">
+      <nav class="header__nav" aria-labelledby="header__menu-options">
         <button
           id="header__nav-show-menu"
           class="header__nav-show-menu"
           aria-expanded="false"
           aria-controls="header__menu-options"
-          aria-label="Open toggle menu"
-        >
+          aria-label="Open toggle menu">
           <span class="sr-only">Menu</span>
         </button>
 
@@ -109,8 +108,7 @@
         <img
           class="header__logo--image"
           src="./images/logo.svg"
-          alt="Logo of Sneakers "
-        />
+          alt="Logo of Sneakers" />
       </a>
 
       <div class="cart-button-panel-wrapper">
@@ -120,26 +118,21 @@
           type="button"
           aria-label="Open cart panel"
           aria-controls="cart-panel"
-          aria-expanded="false"
-        >
+          aria-expanded="false">
           <img
             src="./images/icon-cart.svg"
             class="cart-button__image"
-            alt="Cart Icon"
-          />
+            alt="Cart Icon" />
           <span
             class="cart-button__badge"
             id="cart-button__badge"
-            aria-live="polite"
-          ></span>
+            aria-live="polite"></span>
         </button>
         <aside
           id="cart-panel"
           class="cart-panel"
-          role="dialog"
-          aria-modal="false"
-          aria-labelledby="cart-panel__title"
-        >
+          role="region"
+          aria-labelledby="cart-panel__title">
           <h3 class="cart-panel__title">Cart</h3>
           <div class="cart-panel__content">
             <!-- 
@@ -174,8 +167,7 @@
             </ul> -->
             <button
               id="cart-panel__btn-checkout"
-              class="cart-panel__btn-checkout"
-            >
+              class="cart-panel__btn-checkout">
               Checkout
             </button>
           </div>
@@ -183,50 +175,50 @@
       </div>
 
       <button type="button" class="avatar-button" aria-label="User menu">
-        <img src="./images/image-avatar.png" class="avatar-button__image" />
+        <img
+          src="./images/image-avatar.png"
+          class="avatar-button__image"
+          alt="Avatar of the client" />
       </button>
     </header>
 
-    <main id="main-content" class="main" aria-labelledby="">
+    <main
+      id="main-content"
+      class="main"
+      aria-labelledby="product__gallery-thumbnails">
       <section class="product">
         <div
           class="product__gallery"
           role="region"
-          aria-label="Product image gallery"
-        >
+          aria-label="Product image gallery">
           <div class="product__gallery-main" id="product__gallery-main">
             <img
               id="product__main-image"
               class="product__gallery-image pointer"
               src="./images/loader.gif"
               alt="Product view 1"
-              aria-live="polite"
-            />
+              aria-live="polite" />
 
             <button
               type="button"
               class="product__gallery-btn product__gallery-btn--prev"
-              aria-label="Previous image"
-            >
+              aria-label="Previous image">
               <img
                 src="./images/icon-previous.svg"
                 alt="Previous Slide Icon"
                 width="6"
-                height="11"
-              />
+                height="11" />
             </button>
 
             <button
               type="button"
               class="product__gallery-btn product__gallery-btn--next"
-              aria-label="Next image"
-            >
+              aria-label="Next image">
               <img
                 src="./images/icon-next.svg"
                 alt="Next Slide Icon"
                 width="6"
-                height="11"
-              />
+                height="11" />
             </button>
           </div>
 
@@ -234,8 +226,7 @@
             id="product__gallery-thumbnails"
             class="product__gallery-thumbnails"
             role="group"
-            aria-label="Product image thumbnails"
-          >
+            aria-label="Product image thumbnails">
             <button class="product__thumbnail" aria-label="Select Thumbnail 1">
               <img src="./images/loader.gif" alt="Thumbnail 1" />
             </button>
@@ -268,29 +259,25 @@
             <div
               class="product__price--actual"
               role="group"
-              aria-label="Product price"
-            >
+              aria-label="Product price">
               <span
                 id="product__price-sale"
                 class="product__price-sale"
                 aria-label="Sale price"
-                aria-describedby="product__price-discount"
-              >
+                aria-describedby="product__price-discount">
                 <img src="./images/3-dots-fade.svg" alt="Loading" />
               </span>
               <span
                 id="product__price-discount"
                 class="product__price-discount"
-                aria-label="Discount"
-              >
+                aria-label="Discount">
                 <img src="./images/3-dots-fade.svg" alt="Loading" />
               </span>
             </div>
             <span
               id="product__price-original"
               class="product__price-original"
-              aria-label="Original Price"
-            >
+              aria-label="Original Price">
               <img src="./images/3-dots-fade.svg" alt="Loading" />
             </span>
           </div>
@@ -298,14 +285,12 @@
           <div
             class="product__quantity-selector"
             role="group"
-            aria-label="Product quantity selector"
-          >
+            aria-label="Product quantity selector">
             <button
               type="button"
               id="product__quantity-btn--decrease"
               class="product__quantity-btn product__quantity-btn--decrease"
-              aria-label="Decrease quantity"
-            >
+              aria-label="Decrease quantity">
               <img src="./images/icon-minus.svg" alt="Icon minus" />
             </button>
 
@@ -314,8 +299,7 @@
               class="product__quantity-value"
               role="status"
               aria-live="polite"
-              aria-label="Selected quantity"
-            >
+              aria-label="Selected quantity">
               <img src="./images/3-dots-fade.svg" alt="Loading" />
             </span>
 
@@ -323,8 +307,7 @@
               type="button"
               id="product__quantity-btn--increase"
               class="product__quantity-btn product__quantity-btn--increase"
-              aria-label="Increase quantity"
-            >
+              aria-label="Increase quantity">
               <img src="./images/icon-plus.svg" alt="Icon plus" />
             </button>
           </div>
@@ -333,8 +316,7 @@
             type="button"
             id="product__checkout-btn"
             class="product__checkout-btn"
-            aria-label="Add product to cart"
-          >
+            aria-label="Add product to cart">
             <span class="product__btn-icon" aria-hidden="true"></span>
 
             <span class="product__btn-text">Add to cart</span>
@@ -347,12 +329,13 @@
       Challenge by
       <a
         href="https://www.frontendmentor.io/profile/barriedirk/solutions"
-        target="_blank"
-        >Frontend Mentor</a
-      >. Coded by
-      <a href="https://www.linkedin.com/in/barriefreyre/" target="_blank"
-        >Barrie Freyre</a
-      >
+        target="_blank">
+        Frontend Mentor
+      </a>
+      . Coded by
+      <a href="https://www.linkedin.com/in/barriefreyre/" target="_blank">
+        Barrie Freyre
+      </a>
     </footer>
 
     <dialog id="lightbox" class="lightbox">
@@ -363,8 +346,7 @@
             src="./images/icon-close.svg"
             width="20"
             height="20"
-            alt="Close lightbox icon"
-          />
+            alt="Close lightbox icon" />
         </button>
       </header>
 
@@ -372,8 +354,7 @@
         class="lightbox__content product__gallery"
         id="lightbox__gallery-main"
         role="region"
-        aria-label="Product image gallery"
-      ></div>
+        aria-label="Product image gallery"></div>
     </dialog>
   </body>
 </html>
